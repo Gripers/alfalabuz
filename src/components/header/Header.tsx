@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import MainDrawer from '../drawer/main/MainDrawer';
-import HeaderDrop from './HeaderDrop';
 
 const Header = () => {
   const { width } = useWindowSize();
@@ -79,7 +78,6 @@ const Header = () => {
           </nav>
         )}
       </div>
-      {/* <HeaderDrop /> */}
     </header>
   );
 };

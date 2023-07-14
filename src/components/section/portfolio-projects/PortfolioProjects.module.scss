@@ -30,12 +30,17 @@
     li {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
+      overflow: hidden;
 
       a {
+        height: 30px;
+        text-decoration: underline;
         color: white;
         font-weight: bold;
-        text-decoration: underline;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
     }
   }

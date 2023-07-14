@@ -9,29 +9,42 @@ import portfolioDB from '@/db/portfolio.db';
 const PortfolioProjects = () => {
   const [active, setActive] = useState(0);
   const listRef = useRef<HTMLUListElement>(null);
+  let filterBy: string;
+
+  if (active === 0) filterBy = 'all';
+  else if (active === 1) filterBy = 'branding';
+  else filterBy = 'website';
 
   const handleChange = () => {
     const items = listRef.current!.children;
-    const arr = Array.from(items);
 
-    arr[0].classList.add(styles.active);
+    for (const index in items) {
+      items[index].classList?.remove(styles.active);
+    }
 
-    arr.forEach((item) => {
-      item.addEventListener('mouseover', (event: any) => {});
-    });
+    items[active].classList.add(styles.active);
   };
+
+  const filterF = (item: any) => {
+    if (filterBy === 'all') return portfolioDB;
+    else return item.type === filterBy;
+  };
+
+  useEffect(() => {
+    handleChange();
+  }, [active]);
 
   return (
     <section className={styles.portfolio__projects}>
       <nav>
         <ul ref={listRef}>
-          <li>ВСЕ</li>
-          <li>БРЕНДИНГ</li>
-          <li>САЙТЫ</li>
+          <li onClick={() => setActive(0)}>ВСЕ</li>
+          <li onClick={() => setActive(1)}>БРЕНДИНГ</li>
+          <li onClick={() => setActive(2)}>САЙТЫ</li>
         </ul>
       </nav>
       <ul>
-        {portfolioDB.map((item) => (
+        {portfolioDB.filter(filterF).map((item) => (
           <li key={item.id}>
             <Image src={'/static/media' + item.image} alt='' fill />
             <Link href={`/portfolio/${item.id}`}>{item.title}</Link>

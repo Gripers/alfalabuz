@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import styles from './MainDrawer.module.scss';
 
 import Drawer from 'react-modern-drawer';
@@ -17,6 +17,7 @@ const MainDrawer = () => {
         direction='right'
         onClose={handleClose}
         className={styles.drawer}
+        customIdSuffix={useId()}
       >
         <div className={styles.drawer__header}>
           <button className={styles.btn} onClick={handleClose}>

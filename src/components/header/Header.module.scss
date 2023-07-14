@@ -29,12 +29,6 @@
   }
 }
 
-.header__drop {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 @media (max-width: 767px) {
   .header .header__top {
     flex-direction: column;
