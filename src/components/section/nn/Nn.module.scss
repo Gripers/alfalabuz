@@ -1,0 +1,32 @@
+.nn {
+  display: flex;
+  gap: 50px;
+
+  .nn__left,
+  .nn__right {
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    gap: 20px;
+
+    b {
+      width: fit-content;
+      border-bottom: 3px solid #2653e3;
+      padding-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    a {
+      color: white;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .nn {
+    flex-direction: column;
+  }
+}

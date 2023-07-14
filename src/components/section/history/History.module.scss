@@ -1,0 +1,42 @@
+.history {
+  display: flex;
+  gap: 30px;
+
+  .history__left {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  .history__right {
+    width: 50%;
+
+    ul {
+      display: grid;
+      gap: 20px;
+
+      li {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        img {
+          object-fit: contain;
+        }
+
+        p {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .history {
+    flex-direction: column;
+
+    .history__right {
+      width: 100%;
+    }
+  }
+}

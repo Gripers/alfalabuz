@@ -1,0 +1,18 @@
+.portfolio__main {
+  max-width: 100%;
+  width: 100%;
+  background-image: url(/static/media/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding: 15%;
+
+  h1 {
+    width: fit-content;
+    font-size: 40px;
+    border-bottom: 3px solid white;
+    margin: 0 auto 26px auto;
+    padding-bottom: 20px;
+  }
+}

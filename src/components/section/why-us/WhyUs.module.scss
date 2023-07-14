@@ -1,0 +1,26 @@
+.whyus {
+  width: 95%;
+  background-color: #212121;
+  margin: 26px auto;
+  padding: 40px 20px;
+
+  ul {
+    display: flex;
+    gap: 20px;
+
+    li {
+      text-align: center;
+
+      h3 {
+        margin: 20px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .whyus ul {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
